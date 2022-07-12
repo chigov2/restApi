@@ -56,6 +56,12 @@ public class MyRESTController {
 
         return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
     }
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee employee){
+
+        employeeService.saveEmployee(employee);
+        return employee;
+    }
 
 
 }
